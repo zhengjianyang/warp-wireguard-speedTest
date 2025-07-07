@@ -17,10 +17,15 @@ func ParseIPRange(ipRange string) ([]net.IP, error) {
 			copy(newIP, ip)
 			ips = append(ips, newIP)
 		}
-		// 删除网络地址和广播地址
-		if len(ips) > 2 {
-			return ips[1 : len(ips)-1], nil
+		// 根据网络掩码长度决定是否过滤网络地址和广播地址
+		ones, bits := ipNet.Mask.Size()
+		if ones < bits-1 {
+			// 对于 /30 及以下的网络，过滤掉网络地址和广播地址
+			if len(ips) > 2 {
+				return ips[1 : len(ips)-1], nil
+			}
 		}
+		// 对于 /31 和 /32 网络，返回所有地址
 		return ips, nil
 	}
 

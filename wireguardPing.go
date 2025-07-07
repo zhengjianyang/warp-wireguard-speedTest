@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	pingTimeout                 = time.Millisecond * 1000
+	pingTimeout                 = time.Millisecond * 500
 	wireguardHandshakeRespBytes = 92
 	readBufferSize              = 128 // 必须大于等于 wireguardHandshakeRespBytes
 )

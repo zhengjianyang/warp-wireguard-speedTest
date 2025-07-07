@@ -89,7 +89,7 @@ func RunTasks(config *Config) {
 		if err := saveResultsToCSV(results, config.SaveFileName); err != nil {
 			log.Fatalf("无法保存结果到CSV: %v", err)
 		}
-		fmt.Println("结果已保存到 results.csv")
+		fmt.Println("结果已保存到: ", config.SaveFileName)
 
 		results = results[:10]
 	}
