@@ -1,0 +1,13 @@
+# IDE files
+.idea/
+*.iml
+
+# Test files
+*_test.go
+
+# Build files
+*.exe
+*.out
+
+# Other
+.DS_Store
