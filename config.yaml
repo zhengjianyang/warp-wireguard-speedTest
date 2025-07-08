@@ -1,10 +1,10 @@
 # config.yaml
 
 # 保存结果文件名
-saveFileName: "test.csv"
+saveFileName: "results.csv"
 
 # 最大并发协程数
-threads: 200
+threads: 100
 
 # 对每个IP:Port组合的成功测试次数要求
 pingCount: 3
